@@ -10,7 +10,14 @@ body, html {
     background-attachment: fixed;
     background-size: cover;
 }
-
+.site-container {
+    width: 1730px; /* Fixed width */
+    height: 900px; /* Fixed height */
+    /* Background color */
+    overflow: auto; /* Handle overflow content with scrollbars */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for styling */
+    border-radius: 10px; /* Optional rounded corners */
+}
 @keyframes fadeIn {
     from {
         opacity: 0;
