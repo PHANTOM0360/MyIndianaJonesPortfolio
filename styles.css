@@ -30,21 +30,12 @@ body, html {
         transform: translateY(0);
     }
 }
-@keyframes rotateTotem {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 @keyframes moveTotemRight {
     0% {
-        transform: translateX(0);
+        left: 0; /* Start from the left edge of the lever-bar */
     }
     100% {
-        transform: translateX(500px); /* Adjust this value as needed */
+        left: calc(100% - 420px); /* Move to the right edge of the lever-bar */
     }
 }
 
@@ -58,14 +49,7 @@ body, html {
         opacity: 1;
     }
 }
-@keyframes moveContainerLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100px); /* Adjust this value as needed */
-    }
-}
+
 
 .header {
     position: relative;
@@ -322,30 +306,7 @@ body, html {
     transition:  left 3s; /* Adjust timing to match the animation duration */
 }
 
-.totem {
-    width: 400px;
-    height: 400px;
-    background-image: url('totem.png');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    margin-top: 0px;
-    
-    cursor: pointer; /* Indicate that it's clickable */
-    transform-origin: center;
-    position: relative;
-    transition: transform 1s ease-in-out;
-}
-.animate-rotate {
-    animation: rotateTotem 1s forwards;
-}
-
-.animate-move {
-    animation: moveTotemRight 3s forwards;
-}
-
-.rail-bar{
+.rail-bar {
     height: 200px;
     width: 93em;
     background-color: #3a2b1b;
@@ -357,7 +318,8 @@ body, html {
     border-radius: 30px;
     transform: translateX(-50%) translateY(-50%);
 }
-.lever-bar{
+
+.lever-bar {
     height: 20px;
     width: 82em;
     background-color: black;
@@ -368,4 +330,24 @@ body, html {
     top: 52%; /* Adjust top if needed */
     border-radius: 30px;
     transform: translateX(-50%) translateY(-50%);
+}
+
+.totem {
+    width: 400px; /* Adjusted width to fit the rail */
+    height: 400px; /* Adjusted height to fit the rail */
+    background-image: url('totem.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    cursor: pointer; /* Indicate that it's clickable */
+    transform-origin: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: transform 1s ease-in-out, left 3s; /* Adjust timing to match the animation duration */
+}
+.animate-move {
+    animation: moveTotemRight 2s forwards;
 }

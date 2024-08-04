@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const rockMoveSound = document.getElementById('rockMoveSound');
     const leverSound = document.getElementById('leverSound');
     const leafSound = document.getElementById('leafSound');
-    const victorySound = document.getElementById("victorySound"); 
+    const victorySound = document.getElementById('victorySound');
+    
     sliders.forEach((slider, index) => {
         slider.addEventListener('click', function (event) {
             clickSound.currentTime = 0; // Reset audio to start
@@ -29,16 +30,13 @@ document.addEventListener('DOMContentLoaded', function () {
             checkPattern();
         });
     });
-    
 
     totem.addEventListener('click', function () {
         leverSound.currentTime = 0;
-            leverSound.play();
-        totem.classList.add('animate-rotate');
-        totem.classList.add('animate-move');
-       
+        leverSound.play();
+        totem.classList.add('animate-move'); // Apply only the sliding animation
+        
         setTimeout(function () {
-
             slideInBox.style.opacity = '100';
             rockMoveSound.currentTime = 0;
             rockMoveSound.play();
