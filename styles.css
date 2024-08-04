@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=MedievalSharp&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap');
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    background-image: url('bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes dropDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes rotateTotem {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveTotemRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(500px); /* Adjust this value as needed */
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes moveContainerLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100px); /* Adjust this value as needed */
+    }
+}
+
+.header {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 20%;
+    opacity: 0;
+    animation: dropDown 1s ease-out forwards;
+}
+
+.header img {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+.header .name-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-image: url('name.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+.portfolio {
+    position: relative;
+    height: 90%;
+    margin-top: 70px;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 5px;
+    padding: 0;
+    border-radius: 30px;
+    border: 20px solid rgb(153, 116, 82);
+    overflow: hidden;
+}
+
+.portfolio .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('background2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: filter 0.5s ease;
+    z-index: 0;
+}
+
+.portfolio .overlay {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('vines.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: top 0.5s ease;
+    z-index: 1;
+}
+
+.portfolio:hover .background {
+    filter: blur(10px);
+}
+
+.portfolio:hover .overlay {
+    top: 0;
+}
+
+
+.puzzle-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50vh;
+    background-image: url('puzzlebg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 50px;
+    border: 8px solid rgb(153, 116, 82);
+    border-radius: 0px;
+}
+
+.puzzle-box {
+    width: 200px;
+    height: 300px;
+    background-color: #917352;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.puzzle {
+    width: 100%;
+    height: 100%;
+    background-image: url('puzzle.png');
+    padding: 10px;
+    box-sizing: border-box;
+    border: 10px solid rgb(165, 121, 79);
+    box-shadow: inset 7px 7px 7px 7px rgb(0, 0, 0);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bar {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(48, 32, 17);
+    box-shadow: inset 4px 4px 7px 7px rgb(0, 0, 0);
+    margin: 40px 0;
+    border-radius: 15px;
+    position: relative;
+}
+
+.slider {
+    width: 30px;
+    height: 30px;
+    background-image: url('slider.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+    transition: left 0.3s ease;
+}
+
+.text-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; /* Changed from row to column */
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.riddle {
+    font-size: 22px;
+    color: rgb(24, 22, 22);
+    font-family: 'Cedarville Cursive', sans-serif; 
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-width: 35%;
+    font-weight: bold;
+}
+
+.bg-container {
+    max-width: 70%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('aboutbg.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    max-height: 100%;
+}
+
+#displayText {
+    font-size: 20px;
+    color: rgb(24, 22, 22);
+    line-height: 1.2;
+    max-width: 42%;
+    font-family: 'Style Script';
+}
+
+#displayText span {
+    font-size: 25px;
+    color: rgb(29, 7, 7);
+    line-height: 1.4;
+    max-width: 30%;
+    font-family: 'Cedarville Cursive';
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#skillsSection.hidden {
+    display: none; /* Hide the skills section until the riddle is solved */
+}
+
+.sk-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center;
+    height: 73vh;
+    margin-top: 0px;
+   
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 50px;
+    border: 8px solid rgb(153, 116, 82);
+    border-top: 0px;
+    border-bottom: 0px;
+    
+    position: relative;
+}
+
+.sk-container .text-container2 {
+    margin-top: 20px; /* Space from the top */
+    text-align: center;
+    height: 80px;
+    width: 400px;
+}
+
+.sk-container span {
+    font-size: 65px;
+    color: rgb(165, 121, 79);
+    line-height: 1.4;
+    font-family: 'MedievalSharp';
+    font-weight: bold;
+    margin-bottom: 1px;
+    
+}
+.slide-in-box {
+    width: 600px;
+    height: 500px;
+    background-image: url('skills.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 15px solid rgb(153, 116, 82);
+    box-shadow: inset 4px 4px 7px 7px rgb(0, 0, 0);
+    position: absolute;
+    left: -100%; /* Start off-screen */
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 4px;
+    opacity: 100;
+    border-radius: 15px;
+    transition:  left 3s; /* Adjust timing to match the animation duration */
+}
+
+.totem {
+    width: 400px;
+    height: 400px;
+    background-image: url('totem.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    margin-top: 0px;
+    
+    cursor: pointer; /* Indicate that it's clickable */
+    transform-origin: center;
+    position: relative;
+    transition: transform 1s ease-in-out;
+}
+.animate-rotate {
+    animation: rotateTotem 1s forwards;
+}
+
+.animate-move {
+    animation: moveTotemRight 3s forwards;
+}
+
+.rail-bar{
+    height: 200px;
+    width: 93em;
+    background-color: #3a2b1b;
+    border: 15px solid rgb(153, 116, 82);
+    box-shadow: inset 4px 4px 7px 7px rgb(0, 0, 0);
+    position: absolute;
+    left: 50%;
+    top: 58%; /* Adjust top if needed */
+    border-radius: 30px;
+    transform: translateX(-50%) translateY(-50%);
+}
+.lever-bar{
+    height: 20px;
+    width: 82em;
+    background-color: black;
+    border: 10px solid rgb(153, 116, 82);
+    box-shadow: inset 8px 6px 8px 8px rgb(0, 0, 0);
+    position: absolute;
+    left: 50%;
+    top: 52%; /* Adjust top if needed */
+    border-radius: 30px;
+    transform: translateX(-50%) translateY(-50%);
+}

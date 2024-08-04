@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Layout</title>
+    <link rel="stylesheet" href="styles.css">
+    <audio id="clickSound" src="click-sound.mp3" preload="auto"></audio>
+    <audio id="rockMoveSound" src="rock-move.mp3" preload="auto"></audio>
+    <audio id="leverSound" src="lever-pull.mp3" preload="auto"></audio>
+    <audio id="leafSound" src="leaf-sound.mp3" preload="auto"></audio>
+    <audio id="victorySound" src="victory-sound.mp3" preload="auto"></audio>
+</head>
+<body>
+    
+    <section class="header">
+        <img src="header.png" alt="Header Image">
+        <div class="name-overlay"></div>
+    </section>
+    <section class="portfolio">
+        <div class="background"></div>
+        <div class="overlay"> </div>
+    </section>
+    <section class="puzzle-section">
+        <div class="puzzle-box">
+            <div class="puzzle">
+                <div class="bar"><div class="slider"></div></div>
+                <div class="bar"><div class="slider"></div></div>
+                <div class="bar"><div class="slider"></div></div>
+            </div>
+        </div>
+        <div class="bg-container">
+            <div class="text-container">
+                <div id="riddleText" class="riddle">
+                    High above where the page begins,
+                    Lies a clue where the answer spins.
+                    Find the match where my identity does show,
+                    Unlock the secret where the sliders go.
+                </div>
+                <div id="displayText" class="hidden">
+                    <span> ABOUT ME </span>
+                    <div>
+                        As an aspiring web developer with a strong passion for graphics and UI/UX design, I am dedicated to creating visually appealing and user-friendly web experiences. Although I haven't yet developed a large portfolio of projects, my enthusiasm and creativity drive me to continuously learn and improve my skills. I am particularly interested in combining my design sensibilities with technical expertise to build intuitive and engaging websites. My focus is on mastering the latest web development technologies and design trends to ensure that the solutions I create not only meet functional requirements but also deliver an exceptional user experience. I am eager to tackle new challenges and contribute to projects that allow me to leverage my creativity and technical knowledge to make a meaningful impact.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="puzzle-box">
+            <div class="puzzle">
+                <div class="bar"><div class="slider"></div></div>
+                <div class="bar"><div class="slider"></div></div>
+                <div class="bar"><div class="slider"></div></div>
+            </div>
+        </div>
+    </section>
+    <section class="hidden sk-container" id="skillsSection">
+        
+        <div class="text-container2">
+            <span>Skills</span>
+            <div class="rail-bar">
+                <div class="lever-bar"></div>
+            </div>
+            <div class="slide-in-box"></div>
+            <div class="totem"></div>
+            
+            
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
