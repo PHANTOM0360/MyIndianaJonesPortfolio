@@ -93,6 +93,24 @@ body, html {
     overflow: hidden;
 }
 
+.portfolio-image {
+    position: absolute;
+    bottom: -100px; /* Start from below the visible area */
+    left: 50%;
+    transform: translateX(-50%) translateY(100%); /* Center horizontally and start off-screen */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition */
+    opacity: 0; /* Start invisible */
+    width: 400px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 5; /* Ensure it's on top of other elements */
+    
+}
+
+.portfolio:hover .portfolio-image {
+    transform: translateX(-50%) translateY(-10%); /* Move to center */
+    opacity: 1; /* Fade in */
+}
+
 .portfolio .background {
     position: absolute;
     top: 0;
