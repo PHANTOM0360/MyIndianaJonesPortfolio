@@ -349,5 +349,5 @@ body, html {
     transition: transform 1s ease-in-out, left 3s; /* Adjust timing to match the animation duration */
 }
 .animate-move {
-    animation: moveTotemRight 1s forwards;
+    animation: moveTotemRight 2s forwards;
 }
