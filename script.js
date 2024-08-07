@@ -9,41 +9,59 @@ document.addEventListener('DOMContentLoaded', function () {
     const rockMoveSound = document.getElementById('rockMoveSound');
     const leverSound = document.getElementById('leverSound');
     const leafSound = document.getElementById('leafSound');
-    const victorySound = document.getElementById("victorySound"); 
-    sliders.forEach((slider, index) => {
+    const victorySound = document.getElementById("victorySound");
+
+    let isTotemMovedRight = false; 
+
+    sliders.forEach((slider) => {
         slider.addEventListener('click', function (event) {
-            clickSound.currentTime = 0; // Reset audio to start
+            clickSound.currentTime = 0; 
             clickSound.play();
             const bar = slider.parentElement;
             const barWidth = bar.clientWidth;
             const sliderWidth = slider.clientWidth;
 
             if (slider.classList.contains('moved-right')) {
-                slider.style.left = '0px';
+                slider.style.left = bar.classList.contains('right-start') ? 'calc(100% - 30px)' : '0px';
                 slider.classList.remove('moved-right');
             } else {
-                slider.style.left = (barWidth - sliderWidth) + 'px';
+                slider.style.left = bar.classList.contains('right-start') ? '0px' : (barWidth - sliderWidth) + 'px';
                 slider.classList.add('moved-right');
             }
 
             checkPattern();
         });
     });
-    
 
     totem.addEventListener('click', function () {
         leverSound.currentTime = 0;
-            leverSound.play();
-        totem.classList.add('animate-rotate');
-        totem.classList.add('animate-move');
-       
-        setTimeout(function () {
+        leverSound.play();
 
-            slideInBox.style.opacity = '100';
-            rockMoveSound.currentTime = 0;
-            rockMoveSound.play();
-            slideInBox.style.left = '0%'; // Adjust as needed to position the box correctly
-        }, 1000); // Match this delay with the animation duration
+        if (!isTotemMovedRight) {
+            totem.style.transition = "transform 2s, left 2s";
+            totem.style.left = "calc(100% - 420px)";
+
+            setTimeout(function () {
+                slideInBox.style.transition = "left 2s";
+                slideInBox.style.left = "0%"; 
+                rockMoveSound.currentTime = 0;
+                rockMoveSound.play();
+            }, 1000); 
+        } else {
+            
+            totem.style.transition = "transform 2s, left 2s";
+            
+            totem.style.left = "0";
+
+            slideInBox.style.transition = "left 2s";
+            slideInBox.style.left = "-100%"; 
+
+            setTimeout(function () {
+                
+            }, 2000);
+        }
+
+        isTotemMovedRight = !isTotemMovedRight; 
     });
 
     function checkPattern() {
@@ -62,7 +80,8 @@ document.addEventListener('DOMContentLoaded', function () {
             displayText.style.display = 'block';
             riddleText.style.display = 'none';
             skillsSection.classList.remove('hidden');
-            
+            victorySound.currentTime = 0; 
+            victorySound.play();
         } else {
             displayText.style.display = 'none';
             riddleText.style.display = 'block';

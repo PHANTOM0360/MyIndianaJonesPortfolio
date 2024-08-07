@@ -10,6 +10,26 @@ body, html {
     background-attachment: fixed;
     background-size: cover;
 }
+@keyframes slideOutLeft {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%; 
+    }
+}
+
+@keyframes moveTotemLeft {
+    0% {
+        left: calc(100% - 420px); 
+    }
+    100% {
+        left: 0; 
+    }
+}
+
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -31,10 +51,10 @@ body, html {
 }
 @keyframes moveTotemRight {
     0% {
-        left: 0; /* Start from the left edge of the lever-bar */
+        left: 0; 
     }
     100% {
-        left: calc(100% - 420px); /* Move to the right edge of the lever-bar */
+        left: calc(100% - 420px); 
     }
 }
 
@@ -94,20 +114,20 @@ body, html {
 
 .portfolio-image {
     position: absolute;
-    bottom: -100px; /* Start from below the visible area */
+    bottom: -100px; 
     left: 50%;
-    transform: translateX(-50%) translateY(100%); /* Center horizontally and start off-screen */
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* Smooth transition */
-    opacity: 0; /* Start invisible */
-    width: 400px; /* Adjust as needed */
-    height: auto; /* Maintain aspect ratio */
-    z-index: 5; /* Ensure it's on top of other elements */
+    transform: translateX(-50%) translateY(100%); 
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out; 
+    opacity: 0; 
+    width: 400px; 
+    height: auto; 
+    z-index: 5; 
     
 }
 
 .portfolio:hover .portfolio-image {
-    transform: translateX(-50%) translateY(-10%); /* Move to center */
-    opacity: 1; /* Fade in */
+    transform: translateX(-50%) translateY(-10%); 
+    opacity: 1; 
 }
 
 .portfolio .background {
@@ -212,7 +232,7 @@ body, html {
 .text-container {
     flex-grow: 1;
     display: flex;
-    flex-direction: column; /* Changed from row to column */
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
     max-width: 100%;
@@ -266,17 +286,16 @@ body, html {
     margin-bottom: 10px;
 }
 #skillsSection.hidden {
-    display: none; /* Hide the skills section until the riddle is solved */
+    display: none; 
 }
 
 .sk-container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align items to the top */
+    justify-content: flex-start; 
     align-items: center;
     height: 73vh;
     margin-top: 0px;
-   
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -289,7 +308,7 @@ body, html {
 }
 
 .sk-container .text-container2 {
-    margin-top: 20px; /* Space from the top */
+    margin-top: 20px; 
     text-align: center;
     height: 80px;
     width: 400px;
@@ -314,14 +333,26 @@ body, html {
     border: 15px solid rgb(153, 116, 82);
     box-shadow: inset 4px 4px 7px 7px rgb(0, 0, 0);
     position: absolute;
-    left: -100%; /* Start off-screen */
+    left: -100%; 
     top: 50%;
     transform: translateY(-50%);
     margin-top: 4px;
     opacity: 100;
     border-radius: 15px;
-    transition:  left 3s; /* Adjust timing to match the animation duration */
+    transition:  left 3s; 
 }
+.animate-slide-out {
+    animation: slideOut 3s forwards;
+}
+.animate-slide-out {
+    animation: slideOutLeft 2s forwards;
+}
+
+.animate-move-back {
+    animation: moveTotemLeft 2s forwards;
+}
+
+
 
 .rail-bar {
     height: 200px;
@@ -331,7 +362,7 @@ body, html {
     box-shadow: inset 4px 4px 7px 7px rgb(0, 0, 0);
     position: absolute;
     left: 50%;
-    top: 58%; /* Adjust top if needed */
+    top: 58%; 
     border-radius: 30px;
     transform: translateX(-50%) translateY(-50%);
 }
@@ -344,27 +375,78 @@ body, html {
     box-shadow: inset 8px 6px 8px 8px rgb(0, 0, 0);
     position: absolute;
     left: 50%;
-    top: 52%; /* Adjust top if needed */
+    top: 52%; 
     border-radius: 30px;
     transform: translateX(-50%) translateY(-50%);
 }
 
 .totem {
-    width: 400px; /* Adjusted width to fit the rail */
-    height: 400px; /* Adjusted height to fit the rail */
+    width: 400px;
+    height: 400px; 
     background-image: url('totem.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 50%;
-    cursor: pointer; /* Indicate that it's clickable */
+    cursor: pointer; 
     transform-origin: center;
     position: absolute;
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    transition: transform 1s ease-in-out, left 3s; /* Adjust timing to match the animation duration */
+    transition: transform 1s ease-in-out, left 3s; 
 }
 .animate-move {
     animation: moveTotemRight 2s forwards;
 }
+
+
+.footer {
+    position: relative;
+    width: 100%;
+    height: 20%; 
+    padding: 0;
+    margin: 0;
+}
+
+.footer-img {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 9px; 
+    width: 100%;
+    padding: 0px 0; 
+}
+
+.footer-icon {
+    width: 70px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.footer-icon:hover {
+    transform: scale(1.2);
+}
+.name-overlay-footer{
+    position: absolute;
+    top: 5;
+    left: 0;
+    width: 60%;
+    height: 350%;
+    background-image: url('name.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.icon-section{
+    padding-left: 60%;
+}
+
