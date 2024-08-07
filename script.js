@@ -55,7 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             slideInBox.style.transition = "left 2s";
             slideInBox.style.left = "-100%"; 
-
+            rockMoveSound.currentTime = 0;
+            rockMoveSound.play();
             setTimeout(function () {
                 
             }, 2000);
