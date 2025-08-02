@@ -1,0 +1,357 @@
+@@ .. @@
+ .puzzle-section {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+-  height: 50vh;
++  min-height: 50vh;
++  padding: 20px;
+   background-image: url('/puzzlebg.png');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+-  padding: 0 50px;
+   border: 8px solid rgb(153, 116, 82);
+   border-radius: 0px;
+ }
+ 
+ .puzzle-box {
+-  width: 200px;
+-  height: 300px;
++  width: min(200px, 25%);
++  height: min(300px, 60vh);
+   background-color: #917352;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin: 10px;
++  flex-shrink: 0;
+ }
+ 
+ .puzzle {
+   width: 100%;
+   height: 100%;
+   background-image: url('/puzzle.png');
+   padding: 10px;
+   box-sizing: border-box;
+   border: 10px solid rgb(165, 121, 79);
+   box-shadow: inset 7px 7px 7px 7px rgb(0, 0, 0);
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+ }
+ 
+ .bar {
+   width: 100%;
+   height: 30px;
+   background-color: rgb(48, 32, 17);
+   box-shadow: inset 4px 4px 7px 7px rgb(0, 0, 0);
+-  margin: 40px 0;
++  margin: min(40px, 8%) 0;
+   border-radius: 15px;
+   position: relative;
+ }
+ 
+ .slider {
+   width: 30px;
+   height: 30px;
+   background-image: url('/slider.png');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   position: absolute;
+   left: 0;
+   top: 0;
+   cursor: pointer;
+   transition: left 0.3s ease;
+ }
+ 
+ .text-container {
+   flex-grow: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+-  max-width: 100%;
++  max-width: 50%;
+   text-align: center;
++  padding: 0 20px;
+ }
+ 
+ .hidden {
+   display: none;
+ }
+ 
+ .riddle {
+-  font-size: 22px;
++  font-size: clamp(16px, 3vw, 22px);
+   color: rgb(24, 22, 22);
+   font-family: 'Cedarville Cursive', sans-serif;
+   padding: 10px 20px;
+   border-radius: 10px;
+   margin-bottom: 20px;
+-  max-width: 35%;
++  max-width: 100%;
+   font-weight: bold;
++  line-height: 1.4;
+ }
+ 
+ .bg-container {
+-  max-width: 70%;
++  max-width: 50%;
+   flex-grow: 1;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-image: url('/aboutbg.png');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 100%;
+   max-height: 100%;
++  padding: 20px;
++  box-sizing: border-box;
+ }
+ 
+ #displayText {
+-  font-size: 20px;
++  font-size: clamp(14px, 2.5vw, 20px);
+   color: rgb(24, 22, 22);
+   line-height: 1.2;
+-  max-width: 42%;
++  max-width: 100%;
+   font-family: 'Style Script';
++  text-align: center;
+ }
+ 
+ #displayText span {
+-  font-size: 25px;
++  font-size: clamp(18px, 3.5vw, 25px);
+   color: rgb(29, 7, 7);
+   line-height: 1.4;
+-  max-width: 30%;
+   font-family: 'Cedarville Cursive';
+   font-weight: bold;
+   margin-bottom: 10px;
++  display: block;
+ }
+ 
+ #skillsSection.hidden {
+   display: none;
+ }
+ 
+ .sk-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+-  height: 73vh;
++  min-height: 60vh;
+   margin-top: 0px;
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+-  padding: 0 50px;
++  padding: 20px;
+   border: 8px solid rgb(153, 116, 82);
+   border-top: 0px;
+   border-bottom: 0px;
+   position: relative;
++  overflow: hidden;
+ }
+ 
+ .sk-container .text-container2 {
+   margin-top: 20px;
+   text-align: center;
+   height: 80px;
+-  width: 400px;
++  width: min(400px, 90%);
+ }
+ 
+ .sk-container span {
+-  font-size: 65px;
++  font-size: clamp(32px, 8vw, 65px);
+   color: rgb(165, 121, 79);
+   line-height: 1.4;
+   font-family: 'MedievalSharp';
+   font-weight: bold;
+   margin-bottom: 1px;
+ }
+ 
+ .slide-in-box {
+-  width: 600px;
+-  height: 500px;
++  width: min(600px, 90%);
++  height: min(500px, 60vh);
+   background-image: url('/skills.png');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   border: 15px solid rgb(153, 116, 82);
+   box-shadow: inset 4px 4px 7px 7px rgb(0, 0, 0);
+   position: absolute;
+   left: -100%;
+   top: 50%;
+   transform: translateY(-50%);
+   margin-top: 4px;
+   opacity: 100;
+   border-radius: 15px;
+   transition: left 3s;
+ }
+ 
+ .rail-bar {
+-  height: 200px;
+-  width: 93em;
++  height: min(200px, 25vh);
++  width: min(93em, 95%);
+   background-color: #3a2b1b;
+   border: 15px solid rgb(153, 116, 82);
+   box-shadow: inset 4px 4px 7px 7px rgb(0, 0, 0);
+   position: absolute;
+   left: 50%;
+   top: 58%;
+   border-radius: 30px;
+   transform: translateX(-50%) translateY(-50%);
+ }
+ 
+ .lever-bar {
+   height: 20px;
+-  width: 82em;
++  width: min(82em, 85%);
+   background-color: black;
+   border: 10px solid rgb(153, 116, 82);
+   box-shadow: inset 8px 6px 8px 8px rgb(0, 0, 0);
+   position: absolute;
+   left: 50%;
+   top: 52%;
+   border-radius: 30px;
+   transform: translateX(-50%) translateY(-50%);
+ }
+ 
+ .totem {
+-  width: 400px;
+-  height: 400px;
++  width: min(400px, 60%);
++  height: min(400px, 60%);
+   background-image: url('/totem.png');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   border-radius: 50%;
+   cursor: pointer;
+   transform-origin: center;
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translateY(-50%);
+   transition: transform 1s ease-in-out, left 3s;
++}
++
++@media (max-width: 768px) {
++  .puzzle-section {
++    flex-direction: column;
++    min-height: auto;
++    padding: 15px;
++    gap: 20px;
++  }
++  
++  .puzzle-box {
++    width: min(180px, 80%);
++    height: min(250px, 40vh);
++    margin: 5px;
++  }
++  
++  .text-container {
++    max-width: 100%;
++    order: 2;
++    padding: 0 10px;
++  }
++  
++  .bg-container {
++    max-width: 100%;
++    padding: 15px;
++  }
++  
++  .bar {
++    margin: min(25px, 5%) 0;
++  }
++  
++  .sk-container {
++    min-height: 50vh;
++    padding: 15px;
++  }
++  
++  .slide-in-box {
++    width: min(500px, 95%);
++    height: min(400px, 50vh);
++    border-width: 10px;
++  }
++  
++  .rail-bar {
++    height: min(150px, 20vh);
++    border-width: 10px;
++  }
++  
++  .lever-bar {
++    border-width: 8px;
++  }
++  
++  .totem {
++    width: min(300px, 50%);
++    height: min(300px, 50%);
++  }
++}
++
++@media (max-width: 480px) {
++  .puzzle-section {
++    padding: 10px;
++    gap: 15px;
++  }
++  
++  .puzzle-box {
++    width: min(150px, 90%);
++    height: min(200px, 35vh);
++  }
++  
++  .puzzle {
++    padding: 5px;
++    border-width: 5px;
++  }
++  
++  .bar {
++    height: 25px;
++    margin: min(20px, 4%) 0;
++  }
++  
++  .slider {
++    width: 25px;
++    height: 25px;
++  }
++  
++  .sk-container {
++    min-height: 40vh;
++    padding: 10px;
++  }
++  
++  .slide-in-box {
++    width: min(400px, 98%);
++    height: min(300px, 40vh);
++    border-width: 8px;
++  }
++  
++  .rail-bar {
++    height: min(120px, 15vh);
++    border-width: 8px;
++  }
++  
++  .lever-bar {
++    height: 15px;
++    border-width: 6px;
++  }
++  
++  .totem {
++    width: min(250px, 45%);
++    height: min(250px, 45%);
++  }
+ }

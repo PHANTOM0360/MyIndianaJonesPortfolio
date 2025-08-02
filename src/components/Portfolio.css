@@ -1,0 +1,105 @@
+@@ .. @@
+ .portfolio {
+   position: relative;
+-  height: 90%;
+-  margin-top: 70px;
+-  margin-left: 60px;
+-  margin-right: 60px;
+-  margin-bottom: 5px;
++  height: 60vh;
++  min-height: 400px;
++  margin: 20px;
+   padding: 0;
+   border-radius: 30px;
+   border: 20px solid rgb(153, 116, 82);
+   overflow: hidden;
+ }
+ 
+ .portfolio-image {
+   position: absolute;
+-  bottom: -100px;
++  bottom: -50px;
+   left: 50%;
+   transform: translateX(-50%) translateY(100%);
+   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+   opacity: 0;
+-  width: 400px;
++  width: min(400px, 80%);
+   height: auto;
+   z-index: 5;
+ }
+ 
+ .portfolio:hover .portfolio-image {
+   transform: translateX(-50%) translateY(-10%);
+   opacity: 1;
+ }
+ 
+ .portfolio .background {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url('/background2.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   transition: filter 0.5s ease;
+   z-index: 0;
+ }
+ 
+ .portfolio .overlay {
+   position: absolute;
+   top: -100%;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url('/vines.png');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   transition: top 0.5s ease;
+   z-index: 1;
+ }
+ 
+ .portfolio:hover .background {
+   filter: blur(10px);
+ }
+ 
+ .portfolio:hover .overlay {
+   top: 0;
++}
++
++@media (max-width: 768px) {
++  .portfolio {
++    height: 50vh;
++    min-height: 300px;
++    margin: 15px;
++    border-width: 15px;
++    border-radius: 20px;
++  }
++  
++  .portfolio-image {
++    width: min(300px, 70%);
++    bottom: -30px;
++  }
++}
++
++@media (max-width: 480px) {
++  .portfolio {
++    height: 40vh;
++    min-height: 250px;
++    margin: 10px;
++    border-width: 10px;
++    border-radius: 15px;
++  }
++  
++  .portfolio-image {
++    width: min(250px, 60%);
++    bottom: -20px;
++  }
++  
++  .portfolio:hover .portfolio-image {
++    transform: translateX(-50%) translateY(-5%);
++  }
+ }
