@@ -38,15 +38,15 @@
 
 .name-overlay-footer {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  transform: translateY(-50%);
-  width: clamp(200px, 50vw, 400px);
-  height: 80%;
+  width: clamp(150px, 40vw, 300px);
+  height: 100%;
   background-image: url('/name.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  z-index: 1;
 }
 
 .icon-section {
