@@ -226,40 +226,52 @@
 @media (max-width: 768px) {
   .puzzle-section {
     flex-direction: column;
-    min-height: clamp(600px, 80vh, 900px);
+    min-height: auto;
+    padding: clamp(15px, 4vw, 25px);
     gap: clamp(15px, 3vw, 30px);
   }
   
   .puzzle-box {
-    width: clamp(120px, 40vw, 180px);
-    height: clamp(180px, 30vh, 250px);
+    width: clamp(140px, 35vw, 200px);
+    height: clamp(200px, 35vh, 280px);
   }
   
   .text-container {
-    min-width: 200px;
+    min-width: 280px;
     order: 2;
   }
   
   .bg-container {
-    min-width: 200px;
+    min-width: 280px;
+    padding: clamp(15px, 4vw, 25px);
   }
   
   .sk-container {
-    min-height: clamp(350px, 45vh, 500px);
+    min-height: clamp(400px, 50vh, 600px);
   }
 }
 
 @media (max-width: 480px) {
   .puzzle-section {
-    min-height: clamp(500px, 70vh, 700px);
+    min-height: auto;
+    padding: clamp(10px, 3vw, 20px);
   }
   
   .puzzle-box {
-    width: clamp(100px, 35vw, 150px);
-    height: clamp(150px, 25vh, 200px);
+    width: clamp(120px, 80vw, 180px);
+    height: clamp(180px, 40vh, 250px);
+  }
+  
+  .text-container {
+    min-width: 250px;
+  }
+  
+  .bg-container {
+    min-width: 250px;
+    padding: clamp(10px, 3vw, 20px);
   }
   
   .sk-container {
-    min-height: clamp(300px, 40vh, 450px);
+    min-height: clamp(350px, 45vh, 500px);
   }
 }
